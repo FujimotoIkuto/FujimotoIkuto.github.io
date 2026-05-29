@@ -89,7 +89,11 @@
 
 /* ---------- Reset / base ---------- */
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html {
+    scroll-behavior: smooth;
+    /* Anchor links land below the sticky nav, not under it. */
+    scroll-padding-top: var(--nav-h);
+}
 body {
     margin: 0;
     background: var(--c-bg);
@@ -253,6 +257,12 @@ body[data-lang="en"] .ja { display: none; }
 .nav-links a:hover { color: var(--c-blue); }
 .nav-links a:hover::after { transform: scaleX(1); }
 
+.nav-actions {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--s-3);
+}
+
 .lang-toggle {
     display: inline-flex;
     align-items: center;
@@ -277,6 +287,46 @@ body[data-lang="en"] .ja { display: none; }
 .lang-opt { color: var(--c-muted); transition: color .25s var(--ease); }
 .lang-opt.is-active { color: var(--c-ink); }
 .lang-sep { color: var(--c-rule); }
+
+/* ---------- Hamburger (mobile only) ---------- */
+.nav-toggle {
+    display: none;
+    position: relative;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0;
+    background: var(--c-surface);
+    border: 1px solid var(--c-rule);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: border-color .25s var(--ease), box-shadow .25s var(--ease);
+}
+.nav-toggle:hover { border-color: var(--c-blue); }
+.nav-toggle:focus-visible {
+    outline: none;
+    border-color: var(--c-blue);
+    box-shadow: 0 0 0 3px rgba(59,95,226,.18);
+}
+.nav-toggle-bar {
+    position: absolute;
+    left: 50%;
+    width: 1.15rem;
+    height: 2px;
+    margin-left: -0.575rem;
+    background: var(--c-ink-soft);
+    border-radius: 2px;
+    transition: top .3s var(--ease), transform .3s var(--ease), opacity .2s var(--ease);
+}
+.nav-toggle-bar:nth-child(1) { top: calc(50% - 7px); }
+.nav-toggle-bar:nth-child(2) { top: calc(50% - 1px); }
+.nav-toggle-bar:nth-child(3) { top: calc(50% + 5px); }
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1) {
+    top: calc(50% - 1px); transform: rotate(45deg);
+}
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(3) {
+    top: calc(50% - 1px); transform: rotate(-45deg);
+}
 
 /* ---------- Layout container ---------- */
 main {
@@ -813,27 +863,163 @@ body[data-lang="ja"] .site-foot { font-family: var(--f-sans); letter-spacing: 0.
     .hero-orb-2 { width: 260px; height: 260px; }
 }
 
+/* Drawer breakpoint: collapse nav links into a hamburger panel. */
+@media (max-width: 720px) {
+    :root { --nav-h: 3.75rem; }
+
+    /* Portrait: explicit small square on every phone-sized viewport.
+       Belt-and-suspenders: width *and* height on the img, plus
+       aspect-ratio on the figure — avoids the tall rendering some
+       mobile browsers produce when only aspect-ratio is set. */
+    .hero-portrait {
+        width: clamp(6.5rem, 32vw, 8rem);
+        max-width: 8rem;
+        aspect-ratio: 1 / 1;
+        margin: 0 auto;
+        justify-self: center;
+    }
+    .hero-portrait img {
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+    }
+    .hero-portrait-ring { inset: -8px; filter: blur(18px); }
+
+    .nav-toggle { display: inline-flex; }
+
+    .nav-links {
+        position: fixed;
+        top: var(--nav-h);
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: var(--s-3) var(--s-5) var(--s-5);
+        background: color-mix(in srgb, var(--c-bg) 96%, transparent);
+        backdrop-filter: saturate(150%) blur(14px);
+        -webkit-backdrop-filter: saturate(150%) blur(14px);
+        border-bottom: 1px solid var(--c-rule);
+        box-shadow: 0 18px 28px -18px rgba(15, 28, 80, .22);
+        font-size: var(--t-md);
+        max-height: calc(100dvh - var(--nav-h));
+        overflow-y: auto;
+        transform: translateY(-110%);
+        opacity: 0;
+        visibility: hidden;
+        transition: transform .32s var(--ease), opacity .25s var(--ease), visibility .32s;
+    }
+    .nav-links.is-open {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    .nav-links a {
+        display: block;
+        padding: 0.95rem var(--s-2);
+        border-bottom: 1px solid var(--c-rule-soft);
+        color: var(--c-ink);
+        letter-spacing: 0;
+    }
+    .nav-links a:last-child { border-bottom: 0; }
+    .nav-links a::after { display: none; }
+    .nav-links a.is-current { color: var(--c-blue); }
+    body.nav-open { overflow: hidden; }
+}
+
 @media (max-width: 640px) {
-    .site-nav { padding: 0 var(--s-4); }
-    .nav-links { gap: var(--s-4); font-size: var(--t-xs); }
-    .nav-links a { padding: 0.3rem 0; }
+    body { line-height: 1.7; }
+
+    .site-nav { padding: 0 var(--s-4); gap: var(--s-2); }
     .brand-name { display: none; }
-    .hero { padding-top: var(--s-8); }
-    .hero-portrait { max-width: 7rem; }
-    .hero-name { letter-spacing: -0.02em; }
-    .hero-statement { font-size: var(--t-md); line-height: 1.8; }
+    .nav-actions { gap: var(--s-2); }
+    .lang-toggle { padding: 0.38rem 0.7rem; }
+
+    main { padding: 0 var(--s-4); }
+
+    .hero {
+        padding-top: var(--s-7);
+        padding-bottom: var(--s-7);
+    }
+    .hero-inner { row-gap: var(--s-5); }
+    /* portrait sizing handled by the 720px rule above */
+    .hero-name {
+        font-size: clamp(2.25rem, 9vw, 3rem);
+        letter-spacing: -0.02em;
+        text-align: center;
+    }
+    .hero-sub {
+        font-size: var(--t-base);
+        letter-spacing: 0.1em;
+        text-align: center;
+        margin-bottom: var(--s-5);
+    }
+    .hero-tags-label { text-align: center; margin-bottom: var(--s-2); }
+    .hero-tags { justify-content: center; margin-bottom: var(--s-5); }
+    .hero-tags li { font-size: 0.7rem; padding: 0.28rem 0.55rem; }
+    .hero-statement {
+        font-size: 1.0625rem;
+        line-height: 1.75;
+        text-align: center;
+        margin-bottom: 0;
+    }
+    body[data-lang="en"] .hero-statement { font-size: 1.0625rem; }
+    .hero-orb-1 { width: 240px; height: 240px; }
+    .hero-orb-2 { width: 200px; height: 200px; }
+
+    .section { padding: var(--s-7) 0; }
+    .section + .section::before { left: var(--s-4); right: var(--s-4); }
+    .section-head { margin-bottom: var(--s-6); }
+    .section-title { font-size: 1.75rem; }
+
+    .theme {
+        padding: var(--s-5);
+        padding-left: calc(var(--s-5) + 5px);
+        border-radius: 12px;
+    }
+    .theme-title { font-size: var(--t-lg); }
+    .theme-desc { font-size: var(--t-base); line-height: 1.8; }
+    .theme-media {
+        grid-template-columns: 1fr;
+        gap: var(--s-4);
+    }
+
+    .pub-group { margin-bottom: var(--s-7); }
+    .pub-item {
+        padding: var(--s-4) 0 var(--s-4) 2.25rem;
+        font-size: var(--t-sm);
+    }
+    .pub-item::before { top: var(--s-4); font-size: var(--t-xs); }
+    .pub-title { font-size: var(--t-base); }
+    .pub-authors, .pub-meta { font-size: var(--t-sm); }
+
+    .timeline { padding: 0; }
+    .tl-item {
+        grid-template-columns: 1fr;
+        padding: var(--s-4) 0;
+        row-gap: 0.25rem;
+    }
+    .tl-item::before { display: none; }
+    .tl-date { margin-bottom: var(--s-1); }
+    .tl-where { font-size: var(--t-base); }
+
     .contact-grid {
         grid-template-columns: 1fr;
         padding: var(--s-5);
         row-gap: var(--s-2);
+        border-radius: 12px;
     }
     .contact-grid dt { margin-top: var(--s-3); }
-    .tl-item { grid-template-columns: 1fr; }
-    .tl-item::before { display: none; }
-    .tl-date { margin-bottom: var(--s-1); }
-    .pub-item { padding-left: 2.5rem; }
+    .contact-grid dt:first-of-type { margin-top: 0; }
+    .email { word-break: break-all; }
 
-    .theme { padding: var(--s-5); padding-left: calc(var(--s-5) + 5px); }
-    .theme-title { font-size: var(--t-lg); }
-    .theme-media { grid-template-columns: 1fr; }
+    .site-foot { padding: var(--s-6) var(--s-5); margin-top: var(--s-8); }
+}
+
+@media (max-width: 380px) {
+    .nav-actions { gap: 0.35rem; }
+    .lang-toggle { padding: 0.35rem 0.55rem; letter-spacing: 0.06em; }
+    .nav-toggle { width: 2.25rem; height: 2.25rem; }
+    .hero-name { font-size: clamp(2rem, 10.5vw, 2.5rem); }
 }

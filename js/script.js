@@ -58,6 +58,32 @@
         });
     }
 
+    /* ---------- Mobile nav drawer ---------- */
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (navToggle && navLinks) {
+        const setNavOpen = (open) => {
+            navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            navLinks.classList.toggle('is-open', open);
+            document.body.classList.toggle('nav-open', open);
+        };
+        navToggle.addEventListener('click', () => {
+            const open = navToggle.getAttribute('aria-expanded') !== 'true';
+            setNavOpen(open);
+        });
+        navLinks.querySelectorAll('a').forEach((a) => {
+            a.addEventListener('click', () => setNavOpen(false));
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') setNavOpen(false);
+        });
+        // Close the drawer if the viewport grows past the mobile breakpoint.
+        const mql = window.matchMedia('(min-width: 721px)');
+        const onChange = (e) => { if (e.matches) setNavOpen(false); };
+        if (mql.addEventListener) mql.addEventListener('change', onChange);
+        else if (mql.addListener) mql.addListener(onChange);
+    }
+
     /* ---------- Email obfuscation reveal ---------- */
     document.querySelectorAll('a.email[data-user][data-domain]').forEach((a) => {
         const user = a.getAttribute('data-user');
