@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>藤本 郁人 — Fujimoto Ikuto</title>
+    <meta name="description" content="藤本郁人 (Fujimoto Ikuto)">
+    <meta name="author" content="Fujimoto Ikuto">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="藤本 郁人 — Fujimoto Ikuto">
+    <meta property="og:description" content="藤本郁人 (Fujimoto Ikuto)">
+    <meta property="og:type" content="profile">
+
+    <meta name="theme-color" content="#0b1437">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-lang="ja">
+
+    <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+    <header class="site-nav" aria-label="Site navigation">
+        <a class="brand" href="#top">
+            <span class="brand-mark" aria-hidden="true">藤</span>
+            <span class="brand-name">
+                <span class="ja">藤本 郁人</span>
+                <span class="en">Ikuto FUJIMOTO</span>
+            </span>
+        </a>
+        <nav class="nav-links">
+            <a href="#research" data-i18n-ja="研究" data-i18n-en="Research">研究</a>
+            <a href="#activities" data-i18n-ja="その他の活動" data-i18n-en="Activities">その他の活動</a>
+            <a href="#publications" data-i18n-ja="業績" data-i18n-en="Publications">業績</a>
+            <a href="#cv" data-i18n-ja="経歴" data-i18n-en="CV">経歴</a>
+            <a href="#contact" data-i18n-ja="連絡先" data-i18n-en="Contact">連絡先</a>
+        </nav>
+        <button class="lang-toggle" type="button" aria-label="Toggle language" title="Toggle language">
+            <span class="lang-opt is-active" data-set-lang="ja">JA</span>
+            <span class="lang-sep" aria-hidden="true">/</span>
+            <span class="lang-opt" data-set-lang="en">EN</span>
+        </button>
+    </header>
+
+    <main id="top">
+
+        <!-- ============================================================ -->
+        <!-- HERO — dark navy gradient with subtle grid + glow             -->
+        <!-- ============================================================ -->
+        <section class="hero" aria-labelledby="hero-name">
+
+            <!-- Decorative background: grid + radial glow + circuit lines -->
+            <div class="hero-bg" aria-hidden="true">
+                <svg class="hero-grid" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+                    <defs>
+                        <pattern id="grid" width="56" height="56" patternUnits="userSpaceOnUse">
+                            <path d="M 56 0 L 0 0 0 56" fill="none" stroke="currentColor" stroke-width="0.5"/>
+                        </pattern>
+                        <radialGradient id="glow-a" cx="20%" cy="30%" r="55%">
+                            <stop offset="0%" stop-color="#3b5fe2" stop-opacity="0.55"/>
+                            <stop offset="100%" stop-color="#3b5fe2" stop-opacity="0"/>
+                        </radialGradient>
+                        <radialGradient id="glow-b" cx="85%" cy="78%" r="50%">
+                            <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.35"/>
+                            <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
+                        </radialGradient>
+                    </defs>
+                    <rect width="100%" height="100%" fill="url(#glow-a)"/>
+                    <rect width="100%" height="100%" fill="url(#glow-b)"/>
+                    <rect width="100%" height="100%" fill="url(#grid)"/>
+                </svg>
+                <div class="hero-orb hero-orb-1"></div>
+                <div class="hero-orb hero-orb-2"></div>
+            </div>
+
+            <div class="hero-inner">
+
+                <figure class="hero-portrait">
+                    <span class="hero-portrait-ring" aria-hidden="true"></span>
+                    <img src="images/portrait.jpg" alt="藤本 郁人 のポートレート" width="320" height="320">
+                </figure>
+
+                <div class="hero-text">
+
+                <h1 id="hero-name" class="hero-name">
+                    <span class="ja">藤本 郁人</span>
+                    <span class="en">Ikuto FUJIMOTO</span>
+                </h1>
+
+                <p class="hero-sub">
+                    <span class="ja">Ikuto FUJIMOTO</span>
+                    <span class="en">藤本 郁人</span>
+                </p>
+
+                <p class="hero-tags-label">
+                    <span class="ja">研究分野</span><span class="en">Research Interests</span>
+                </p>
+                <ul class="hero-tags" aria-label="Research interests">
+                    <li>Robotics</li>
+                    <li>Robotic Manipulation</li>
+                    <li>Task and Motion Planning</li>
+                    <li>Physical AI</li>
+                </ul>
+
+                <p class="hero-statement">
+                    <span class="ja">
+                        大阪大学大学院基礎工学研究科 システム創成専攻<br>
+                        <a href="https://www.roboticmanipulation.org" target="_blank" rel="noopener noreferrer">原田研究室</a><br>
+                        博士前期課程 2年
+                    </span>
+                    <span class="en">
+                        Department of Systems Innovation,<br>
+                        Graduate School of Engineering Science, The University of Osaka<br>
+                        <a href="https://www.roboticmanipulation.org" target="_blank" rel="noopener noreferrer">Harada Lab.</a><br>
+                        Master's Student (2nd year)
+                    </span>
+                </p>
+
+                </div><!-- /.hero-text -->
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- RESEARCH                                                     -->
+        <!-- 概要(短く) → パイプライン図 → 研究・ロボットのメディア             -->
+        <!-- ============================================================ -->
+        <section id="research" class="section" aria-labelledby="research-h">
+            <header class="section-head">
+                <h2 id="research-h" class="section-title">
+                    <span class="ja">研究</span><span class="en">Research</span>
+                </h2>
+            </header>
+
+            <div class="themes">
+
+                <article class="theme">
+                    <h3 class="theme-title">
+                        <span class="ja">VLM と論理的評価による柔軟かつ正確なロボット作業</span>
+                        <span class="en">Flexible and Accurate Robot Manipulation via VLMs and Logical Evaluation</span>
+                    </h3>
+                    <p class="theme-meta">
+                        <span>ROBOMECH 2026</span>
+                    </p>
+                    <p class="theme-desc">
+                        <span class="ja">視覚言語モデル (VLM) は柔軟な作業計画を生成できるが，ハルシネーションにより作業失敗に至る可能性がある．
+                            VLMで生成した作業計画を論理的に評価・修正することで，VLM の柔軟性と論理的評価の正確性を統合し，柔軟かつ正確なロボット作業の実現を目指している．</span>
+                        <span class="en">Vision-Language Models (VLMs) can flexibly generate task plans, but hallucinations may lead to task failure. By logically evaluating and correcting the plans a VLM generates, I aim to unite the flexibility of VLMs with the accuracy of logical evaluation, realizing flexible and accurate robot manipulation.</span>
+                    </p>
+                </article>
+
+                <article class="theme">
+                    <h3 class="theme-title">
+                        <span class="ja">視覚画像からの触覚画像生成</span>
+                        <span class="en">Generating Tactile Images from Visual Images</span>
+                    </h3>
+                    <p class="theme-meta">
+                        <span>ROBOMECH 2025</span>
+                    </p>
+                    <p class="theme-desc">
+                        <span class="ja">柔軟なひも状物体の操作には，接触の状態を捉える触覚情報が重要であるが，触覚画像の取得にはコストがかかる．
+                            取得が容易な視覚画像から触覚画像を生成するモデルの構築に取り組んだ.</span>
+                        <span class="en">Manipulating flexible, rope-like objects benefits from tactile information that captures the contact state, yet acquiring tactile images is costly. I worked on building a model that generates tactile images from visual images, which are far easier to obtain.</span>
+                    </p>
+                </article>
+
+                <article class="theme">
+                    <h3 class="theme-title">
+                        <span class="ja">指数座標系を用いた複雑なマニピュレータの制御</span>
+                        <span class="en">Control of Complex Manipulators via Exponential Coordinates</span>
+                    </h3>
+                    <p class="theme-meta">
+                        <span>ICAM 2024</span>
+                        <span>ROBOMECH 2024</span>
+                        <span>ROBOMECH 2023</span>
+                    </p>
+                    <p class="theme-desc">
+                        <span class="ja">指数座標系を用いたマニピュレータ制御により，分岐を有する高自由度マニピュレータの制御に取り組んだ.</span>
+                        <span class="en">Using manipulator control based on exponential coordinates, I worked on controlling high-DOF manipulators with branching (tree-type) structures.</span>
+                    </p>
+                    <div class="theme-media">
+                        <figure class="media-card is-illust is-figure">
+                            <div class="media-frame">
+                                <img src="images/tree_type_model.png" alt="木構造（分岐）マニピュレータのモデル図" loading="lazy">
+                            </div>
+                            <figcaption>
+                                <span class="ja">分岐を有するマニピュレータのモデル</span>
+                                <span class="en">Model of a tree-type manipulator</span>
+                            </figcaption>
+                        </figure>
+                        <figure class="media-card">
+                            <div class="media-frame">
+                                <video autoplay loop muted playsinline preload="metadata">
+                                    <source src="images/15dof_manipulation.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <figcaption>
+                                <span class="ja">分岐を有する 15 自由度マニピュレータの制御</span>
+                                <span class="en">Control of a tree-type 15-DOF manipulator</span>
+                            </figcaption>
+                        </figure>
+                        <figure class="media-card">
+                            <div class="media-frame">
+                                <video autoplay loop muted playsinline preload="metadata">
+                                    <source src="images/30dof_manipulation_simulation.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <figcaption>
+                                <span class="ja">30 自由度マニピュレータの制御シミュレーション</span>
+                                <span class="en">Control simulation of a 30-DOF manipulator</span>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- ACTIVITIES — その他の活動 (研究と同じカード構成)                  -->
+        <!-- ============================================================ -->
+        <section id="activities" class="section" aria-labelledby="act-h">
+            <header class="section-head">
+                <h2 id="act-h" class="section-title">
+                    <span class="ja">その他の活動</span><span class="en">Activities</span>
+                </h2>
+            </header>
+
+            <div class="themes">
+
+                <article class="theme">
+                    <h3 class="theme-title">
+                        <span class="ja"><a href="https://www.rescue-robot-contest.org" target="_blank" rel="noopener noreferrer">レスキューロボットコンテスト</a></span>
+                        <span class="en"><a href="https://www.rescue-robot-contest.org" target="_blank" rel="noopener noreferrer">Rescue Robot Contest</a></span>
+                    </h3>
+                    <p class="theme-meta">
+                        <span class="ja">アイデア賞</span><span class="en">Idea Award</span>
+                        <span class="ja">レスキュー工学奨励賞</span><span class="en">Rescue Eng. Award</span>
+                    </p>
+                    <p class="theme-desc">
+                        <span class="ja">災害現場での救助を想定したレスキューロボットコンテストに，チーム「がんばろう KOBE」として出場した．
+                            私は主にロボットの設計・加工を担当した．
+                        </span>
+                        <span class="en">I competed in the Rescue Robot Contest — which simulates rescue at disaster sites — as part of the team "Ganbarou KOBE," and was mainly responsible for the robot's design and fabrication.</span>
+                    </p>
+                    <div class="theme-media">
+                        <figure class="media-card is-illust">
+                            <div class="media-frame">
+                                <img src="images/rescure_robot.png" alt="レスキューロボットのイラスト" loading="lazy">
+                            </div>
+                        </figure>
+                    </div>
+                </article>
+
+                <article class="theme">
+                    <h3 class="theme-title">
+                        <span class="ja"><a href="https://fdecomi.fukushima-nct.ac.jp" target="_blank" rel="noopener noreferrer">廃炉創造ロボコン</a></span>
+                        <span class="en"><a href="https://fdecomi.fukushima-nct.ac.jp" target="_blank" rel="noopener noreferrer">Decommissioning Robot Contest</a></span>
+                    </h3>
+                    <p class="theme-meta">
+                        <span class="ja">日立 GE 賞</span><span class="en">Hitachi GE Award</span>
+                    </p>
+                    <p class="theme-desc">
+                        <span class="ja">原子力発電所の廃炉での作業を題材とした廃炉創造ロボコンに，チーム「がんばろう KOBE」で出場した．私は主にロボットの設計・加工を担当した．</span>
+                        <span class="en">I competed in the Decommissioning Robot Contest — themed on tasks for decommissioning nuclear power plants — with the team "Ganbarou KOBE," and was mainly responsible for the robot's design and fabrication.</span>
+                    </p>
+                    <div class="theme-media">
+                        <figure class="media-card is-illust">
+                            <div class="media-frame">
+                                <img src="images/hairo_robot.svg" alt="廃炉創造ロボコン用ロボットのイラスト" loading="lazy">
+                            </div>
+                        </figure>
+                    </div>
+                </article>
+
+                <article class="theme">
+                    <h3 class="theme-title">
+                        <span class="ja"><a href="https://sites.google.com/nishitech.ac.jp/auviwakuni2022/home" target="_blank" rel="noopener noreferrer">水中ロボットフェスティバル</a></span>
+                        <span class="en"><a href="https://sites.google.com/nishitech.ac.jp/auviwakuni2022/home" target="_blank" rel="noopener noreferrer">Underwater Robot Festival</a></span>
+                    </h3>
+                    <p class="theme-desc">
+                        <span class="ja">水中ドローンによる競技を行う水中ロボットフェスティバルに，チーム「神戸高専ロボティクス」として出場した．私は主にロボットの制御を担当した．</span>
+                        <span class="en">I competed in the Underwater Robot Festival — a competition using underwater drones — as part of the team "Kobe Kosen Robotics," and was mainly responsible for the robot's control.</span>
+                    </p>
+                    <div class="theme-media">
+                        <figure class="media-card is-illust">
+                            <div class="media-frame">
+                                <img src="images/under_water_robot.jpg" alt="水中ロボット" loading="lazy">
+                            </div>
+                        </figure>
+                        <figure class="media-card is-illust">
+                            <div class="media-frame">
+                                <img src="images/under_water_robot_pool.svg" alt="水中ロボットフェスティバル会場" loading="lazy">
+                            </div>
+                        </figure>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- PUBLICATIONS                                                 -->
+        <!-- 査読の有無, 著者順を正確に. 新しい順.                          -->
+        <!-- ============================================================ -->
+        <section id="publications" class="section" aria-labelledby="pub-h">
+            <header class="section-head">
+                <h2 id="pub-h" class="section-title">
+                    <span class="ja">業績</span><span class="en">Publications</span>
+                </h2>
+                <!-- <p class="section-lede">
+                    <span class="ja">査読の有無, 著者順を正確に記載. 新しい順.</span>
+                    <span class="en">Newest first. Peer-review status and author order indicated honestly.</span>
+                </p> -->
+            </header>
+
+            <div class="pub-group">
+                <h3 class="pub-cat">
+                    <span class="ja">国際会議</span><span class="en">International Conferences</span>
+                </h3>
+                <ol class="pub-list">
+                    <li class="pub-item">
+                        <p class="pub-authors">
+                            &#9675; <strong>I. Fujimoto</strong>, J. Amar, S. Mogi, Y. Hara, T. Shimizu, and M. Ozawa,
+                        </p>
+                        <p class="pub-title">&ldquo;Torque Control of Tree-type Manipulator Using Exponential Coordinates,&rdquo;</p>
+                        <p class="pub-meta"><i>Proc. JSME 8th International Conference on Advanced Mechatronics (ICAM 2024)</i>, Fukuoka, Japan, Nov. 6&ndash;8, 2024.</p>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="pub-group">
+                <h3 class="pub-cat">
+                    <span class="ja">国内学会</span><span class="en">Domestic Conferences</span>
+                </h3>
+                <ol class="pub-list" start="2">
+                    <li class="pub-item">
+                        <p class="pub-authors">
+                            &#9675; <strong>藤本郁人</strong>, Amar Julien, 原田燿郎, 原悠鷹, 茂木秀斗, 清水俊彦, 小澤正宜, 酒井昌彦, 尾山匡浩,
+                        </p>
+                        <p class="pub-title">&ldquo;6軸マニピュレータにおける手先位置姿勢の制御方法についての精度および処理速度比較,&rdquo;</p>
+                        <p class="pub-meta">日本機械学会ロボティクス・メカトロニクス講演会 2023, 愛知, 2023年6月.</p>
+                    </li>
+                    <li class="pub-item">
+                        <p class="pub-authors">
+                            &#9675; <strong>藤本郁人</strong>, Amar Julien, 茂木秀斗, 原悠鷹, 清水俊彦, 小澤正宜, 酒井昌彦, 尾山匡浩,
+                        </p>
+                        <p class="pub-title">&ldquo;連鎖行列による分岐を有するマニピュレータの制御,&rdquo;</p>
+                        <p class="pub-meta">日本機械学会ロボティクス・メカトロニクス講演会 2024, 栃木, 2024年5月.</p>
+                    </li>
+                    <li class="pub-item">
+                        <p class="pub-authors">
+                            &#9675; 山田大夢, 奥村亮, 清川拓哉, <strong>藤本郁人</strong>, 万偉偉, 原田研介,
+                        </p>
+                        <p class="pub-title">&ldquo;柔軟ひも状物体の把持に向けた視触覚画像生成モデルの構築,&rdquo;</p>
+                        <p class="pub-meta">日本機械学会ロボティクス・メカトロニクス講演会 2025, 山形, 2025年6月.</p>
+                    </li>
+                    <li class="pub-item">
+                        <p class="pub-authors">
+                            &#9675; <strong>藤本郁人</strong>, 奥村亮, 西澤克彦, 清川拓哉, 万偉偉, 原田研介,
+                        </p>
+                        <p class="pub-title">&ldquo;VLM と FOON を用いた紐結びの長期作業計画,&rdquo;</p>
+                        <p class="pub-meta">日本機械学会ロボティクス・メカトロニクス講演会 2026, 福岡, 2026年6月.</p>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="pub-group">
+                <h3 class="pub-cat">
+                    <span class="ja">受賞</span><span class="en">Awards</span>
+                </h3>
+                <ol class="pub-list" start="7">
+                    <li class="pub-item">
+                        <p class="pub-title">
+                            <span class="ja">アイデア賞</span><span class="en">Idea Award</span>
+                            &mdash; <span class="ja">第19回 レスキューロボットコンテスト (チーム: がんばろう KOBE)</span><span class="en">19th Rescue Robot Contest (Team: Ganbarou KOBE)</span>
+                        </p>
+                        <p class="pub-meta">
+                            <span class="ja">兵庫, 2019年8月.</span><span class="en">Hyogo, Aug. 2019.</span>
+                        </p>
+                    </li>
+                    <li class="pub-item">
+                        <p class="pub-title">
+                            <span class="ja">日立GE賞</span><span class="en">Hitachi GE Award</span>
+                            &mdash; <span class="ja">第5回 廃炉創造ロボコン (チーム: がんばろう KOBE)</span><span class="en">5th Decommissioning Robot Contest (Team: Ganbarou KOBE)</span>
+                        </p>
+                        <p class="pub-meta">
+                            <span class="ja">オンライン開催, 2021年1月.</span><span class="en">Online, Jan. 2021.</span>
+                        </p>
+                    </li>
+                    <li class="pub-item">
+                        <p class="pub-title">
+                            <span class="ja">レスキュー工学奨励賞</span><span class="en">Rescue Engineering Encouragement Award</span>
+                            &mdash; <span class="ja">レスキューロボットコンテスト 20x21 (チーム: がんばろう KOBE)</span><span class="en">Rescue Robot Contest 20x21 (Team: Ganbarou KOBE)</span>
+                        </p>
+                        <p class="pub-meta">
+                            <span class="ja">オンライン開催, 2021年8月.</span><span class="en">Online, Aug. 2021.</span>
+                        </p>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="pub-group">
+                <h3 class="pub-cat">
+                    <span class="ja">その他</span><span class="en">Other</span>
+                </h3>
+                <ol class="pub-list" start="10">
+                    <li class="pub-item">
+                        <p class="pub-title">
+                            <span class="ja"><a href="https://www.hwip.osaka-u.ac.jp" target="_blank" rel="noopener noreferrer">大阪大学 分野連携大学院プログラム ヒューマンウェアイノベーション学位プログラム</a> 採用</span>
+                            <span class="en">Selected for the <a href="https://www.hwip.osaka-u.ac.jp" target="_blank" rel="noopener noreferrer">Humanware Innovation Doctoral Program (interdisciplinary), Osaka University</a></span>
+                        </p>
+                        <p class="pub-meta">
+                            <span class="ja">2025年4月 – 現在.</span><span class="en">Apr. 2025 – present.</span>
+                        </p>
+                    </li>
+                    <li class="pub-item">
+                        <p class="pub-title">
+                            <span class="ja"><a href="https://www.opan.website" target="_blank" rel="noopener noreferrer">Osaka Physical AI Network</a> の運営</span>
+                            <span class="en">Founding organizer, <a href="https://www.opan.website" target="_blank" rel="noopener noreferrer">Osaka Physical AI Network</a> — a cross-lab student community on Physical AI</span>
+                        </p>
+                        <p class="pub-meta">
+                            <span class="ja">2026年5月 – 現在.</span><span class="en">May 2026 – present.</span>
+                        </p>
+                    </li>
+                    <li class="pub-item">
+                        <p class="pub-title">
+                            <span class="ja">神戸高専 成長産業技術者教育プログラム (ロボット分野) 修了</span>
+                            <span class="en">Completed the Growth-Industry Engineer Training Program (Robotics track), Kobe City College of Technology</span>
+                        </p>
+                        <p class="pub-meta">
+                            <span class="ja">2023年3月.</span><span class="en">Mar. 2023.</span>
+                        </p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CV / EDUCATION                                               -->
+        <!-- ============================================================ -->
+        <section id="cv" class="section" aria-labelledby="cv-h">
+            <header class="section-head">
+                <h2 id="cv-h" class="section-title">
+                    <span class="ja">経歴</span><span class="en">CV</span>
+                </h2>
+            </header>
+
+            <ol class="timeline" aria-label="Education timeline">
+                <li class="tl-item">
+                    <p class="tl-date">2025.4 – <span class="ja">現在</span><span class="en">present</span></p>
+                    <div class="tl-body">
+                        <p class="tl-where">
+                            <span class="ja">大阪大学大学院 基礎工学研究科 システム創成専攻 システム科学領域 原田研究室</span>
+                            <span class="en">Harada Lab., Division of System Science, Department of Systems Innovation, Graduate School of Engineering Science, The University of Osaka</span>
+                        </p>
+                    </div>
+                </li>
+
+                <li class="tl-item">
+                    <p class="tl-date">2023.4 – 2025.3</p>
+                    <div class="tl-body">
+                        <p class="tl-where">
+                            <span class="ja">神戸市立工業高等専門学校 専攻科 機械工学システム専攻 Amar研究室 (<a href="https://sites.google.com/g.kobe-kosen.ac.jp/kobe-kosen-robotics/home" target="_blank" rel="noopener noreferrer">神戸高専ロボティクス</a>)</span>
+                            <span class="en">Amar Lab., Advanced Course in Mechanical Engineering Systems, Kobe City College of Technology (<a href="https://sites.google.com/g.kobe-kosen.ac.jp/kobe-kosen-robotics/home" target="_blank" rel="noopener noreferrer">Kobe Kosen Robotics</a>)</span>
+                        </p>
+                    </div>
+                </li>
+
+                <li class="tl-item">
+                    <p class="tl-date">2018.4 – 2023.3</p>
+                    <div class="tl-body">
+                        <p class="tl-where">
+                            <span class="ja">神戸市立工業高等専門学校 機械工学科 Amar研究室 (<a href="https://sites.google.com/g.kobe-kosen.ac.jp/kobe-kosen-robotics/home" target="_blank" rel="noopener noreferrer">神戸高専ロボティクス</a>)</span>
+                            <span class="en">Amar Lab., Department of Mechanical Engineering, Kobe City College of Technology (<a href="https://sites.google.com/g.kobe-kosen.ac.jp/kobe-kosen-robotics/home" target="_blank" rel="noopener noreferrer">Kobe Kosen Robotics</a>)</span>
+                        </p>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CONTACT                                                      -->
+        <!-- ============================================================ -->
+        <section id="contact" class="section" aria-labelledby="contact-h">
+            <header class="section-head">
+                <h2 id="contact-h" class="section-title">
+                    <span class="ja">連絡先</span><span class="en">Contact</span>
+                </h2>
+            </header>
+
+            <dl class="contact-grid">
+                <dt>Email</dt>
+                <dd>
+                    <!-- Obfuscated against naive scrapers; JS reveals on hover/click. -->
+                    <a class="email" href="#" data-user="u434385f" data-domain="ecs.osaka-u.ac.jp">
+                        <span aria-hidden="true">u434385f &#91;at&#93; ecs.osaka-u.ac.jp</span>
+                    </a>
+                </dd>
+            </dl>
+        </section>
+
+    </main>
+
+    <footer class="site-foot">
+        <p>
+            <span class="ja">&copy; 2026 藤本 郁人 (Ikuto FUJIMOTO). All rights reserved.</span>
+            <span class="en">&copy; 2026 Ikuto FUJIMOTO. All rights reserved.</span>
+        </p>
+    </footer>
+
+    <script src="js/script.js" defer></script>
+</body>
+</html>
