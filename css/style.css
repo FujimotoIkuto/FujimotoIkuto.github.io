@@ -728,6 +728,34 @@ body[data-lang="ja"] .pub-meta { font-family: var(--f-sans); }
 /* Italicised venue inside a citation */
 .pub-meta i { font-style: italic; }
 
+/* Peer-review status badge — inline at the end of the citation line */
+.pub-badge {
+    display: inline-block;
+    margin-left: 0.4em;
+    padding: 0.05rem 0.5rem;
+    font-family: var(--f-mono);
+    font-size: var(--t-xs);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    line-height: 1.6;
+    vertical-align: 0.08em;
+    border-radius: 999px;
+    white-space: nowrap;
+}
+body[data-lang="ja"] .pub-badge { font-family: var(--f-sans); letter-spacing: 0.02em; }
+/* Reviewed → soft blue tint (clear, but not shouting) */
+.pub-badge--reviewed {
+    color: var(--c-blue);
+    background: rgba(59,95,226,0.09);
+    border: 1px solid rgba(108,139,239,0.30);
+}
+/* Non-reviewed → muted outline (present but understated) */
+.pub-badge--none {
+    color: var(--c-muted);
+    background: transparent;
+    border: 1px solid var(--c-rule);
+}
+
 /* ---------- Timeline (CV) ---------- */
 .timeline {
     position: relative;
